@@ -84,3 +84,12 @@ isLeapYear(2000)
 // You may not use the built-in Math.sqrt method
 
 //Write your code below this line:
+
+function isPerfectSquare (num){
+    for (let i = 1; i <= num; i++){
+        if(num % i == 0) {
+            console.log(i)
+        }
+    }
+}
+isPerfectSquare(9)
