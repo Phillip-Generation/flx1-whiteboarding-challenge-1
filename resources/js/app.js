@@ -53,3 +53,68 @@
 // You may not use the built-in Math.sqrt method
 
 //Write your code below this line:
+
+
+function genBuzz(lowerLimit, upperLimit)    {
+    if (typeof lowerLimit != 'number' || typeof upperLimit != 'number')    {
+        console.log('The input is not a number!');
+    }   else    if (lowerLimit > upperLimit)    {
+        console.log('The lowerLimit is larger than the upperLimit!');
+    }   else    {
+    for (let i = lowerLimit; i <= upperLimit; i++)   {
+        if ((i%3 === 0) && (i%5 === 0))  {
+            console.log(i + 'GenBuzz');
+        }   else if (i%3 === 0) {
+            console.log(i + 'Gen');
+        }   else if (i%5 === 0)    {
+            console.log(i + 'Buzz');
+        }   else {
+            console.log(i);
+        }
+    }
+    }
+}
+let lowerLimit = 3;
+let upperLimit = 21;
+genBuzz(lowerLimit, upperLimit);
+
+
+function leap_Year()    {
+let leapYear = Number(prompt("Please enter your leapYear"));
+
+if ((leapYear / 4) && (leapYear % 100 != 0))   {
+    console.log(`Leapyear=${leapYear}`);
+}   else    if (leapYear % 400 === 0)   {
+    console.log(`Leapyear=${leapYear}`);
+}   else    {
+    console.log('This year not a Leapyear: ${leapYear}');
+}
+}
+leap_Year();
+
+
+function perfSquare()    {
+let perfectSquare = Number(prompt("Please enter your leapYear"));
+i = 0;
+while (i * i > perfectSquare)  {
+    if (i * i === perfectSquare)    {
+        pSquare = True;
+    }   else {
+        i++;
+    }
+}
+if (pSquare === true)   {
+    console.log('True');
+}   else    {
+    console.log('False');
+}
+}
+perfSquare();
+
+
+
+
+
+
+
+
