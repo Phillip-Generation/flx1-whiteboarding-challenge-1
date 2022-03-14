@@ -12,7 +12,32 @@
 
 // //Write your code below this line:
 
+function genBuzz(lowerLimit, upperLimit) {
 
+    if (typeof lowerLimit !== 'number') {
+        console.log(`${lowerLimit} is not a number`)
+        
+    }else if (typeof upperLimit !== 'number') {
+        console.log(`${upperLimit} is not a number`)
+    }
+
+    if (lowerLimit > upperLimit){
+        console.log(`${lowerLimit} is greater than ${upperLimit}`)
+    }
+
+    for (i = lowerLimit; i <= upperLimit; i++) {
+       console.log(i)
+
+       if (i % 3 == 0 && i % 5 == 0){
+        console.log('GenBuzz')
+       }else if (i % 3 == 0) {
+           console.log('Gen')
+        }else if (i % 5 == 0) {
+        console.log('Buzz')
+       }
+    }
+};   
+        genBuzz(60,30);
 
 
 // 2. Leap Year
@@ -34,8 +59,14 @@
 // Test your code by printing the funcition's output to the console.
 
 //Write your code below this line:
-
-
+function isLeapYear(year){
+    if ((year % 100 === 0) ? (year % 400 === 0) : year % 4 === 0){
+        console.log(`${year} is a Leap Year`)
+        let statement = (`${year} is a Leap Year`)
+        return statement
+    }
+}
+isLeapYear(2000)
 
 
 
