@@ -37,7 +37,7 @@ function genBuzz(lowerLimit, upperLimit) {
         }
     }
 };
-genBuzz(60, 30);
+genBuzz(6, 30);
 
 
 // 2. Leap Year
@@ -59,14 +59,15 @@ genBuzz(60, 30);
 // Test your code by printing the funcition's output to the console.
 
 //Write your code below this line:
-function isLeapYear(year) {
-    if ((year % 100 === 0) ? (year % 400 === 0) : year % 4 === 0) {
-        console.log(`${year} is a Leap Year`)
-        let statement = (`${year} is a Leap Year`)
-        return statement
-    }
-}
-isLeapYear(2000)
+const isLeapYear = year => {
+    if (year % 100 === 0) {
+        if (year % 400 === 0){
+            if (year % 4 === 0){
+            let statement = (`${year} is a Leap Year`)
+            return console.log(statement)
+            }}}}
+
+isLeapYear(2000);
 
 
 
@@ -88,28 +89,26 @@ isLeapYear(2000)
 function isPerfectSquare(num) {
     let factors = [];
     let n = num;
+
     // confirm num is typeof number
     if (typeof n != 'number') {
         console.log(`Error the ${typeof n} "${n}" is not a number`)
         return false;
     }
+
     //push factors of num to array
     for (let i = 1; i < n; i++) {
         if (n % i == 0) {
             factors.push(i)
-        }
-        
-    }console.log(factors)
+        }    
+    }
+    //console.log(factors)
 
     // test if factor is a square root
     for (let f = 0; f < factors.length; f++) {
         if (factors[f] * factors[f] === n) {
-            console.log(factors[f])
-            let lowFactor = factors[f]
-            console.log(lowFactor)
             console.log(`${n} is a Perfect Square`)
         } 
-    }
-       
+    }   
 }
-isPerfectSquare(16)
+isPerfectSquare(20)
