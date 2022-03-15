@@ -11,7 +11,35 @@
 //    * <img src="resources/img/genbuzz-example.png"> 
 
 // //Write your code below this line:
+function genBuzz(lowerLimit,upperLimit){
+    if(typeof upperLimit != 'number' && typeof lowerLimit != 'number'){
+       console.log(`the upperlimit is: ${upperLimit} and lowerlimit is: ${lowerLimit}. Please enter numbers`) 
+    } else if (typeof upperLimit != 'number'){
+        console.log(`you have entered upperlimit : ${upperLimit} Enter a valid number`)
+    } else if (typeof lowerLimit != 'number'){
+        console.log(`you have entered lowerlimit : ${lowerLimit} Enter a valid number`)
+    } else if (lowerLimit > upperLimit){
+        console.log(`lowerlimit should be less than upperlimit. Give a higher value`)
+    } else {
+        for(i=lowerLimit;i<=upperLimit;i++){
+            if(i%3 === 0){
+                console.log('Gen')
+            }
+            else if(i%5 === 0){
+                console.log('Buzz')
+            }
+            else if(i%15 === 0){
+                console.log('GenBuzz')
+            }
+            else{
+                console.log(i);
+            }
+        }
+    }
+    
+}
 
+genBuzz(4,20);
 
 
 
@@ -34,7 +62,28 @@
 // Test your code by printing the funcition's output to the console.
 
 //Write your code below this line:
-
+function isLeapYear(year){
+    if(div/4 ===0) {
+        if(div/100){
+          if(div/400) {
+           // divisible by 4,100 and 400 so leapyear
+           console.log('leapyear')
+          }
+          else{
+           //divisible by 4,100 so not a leapyear. excludes 1200,1600,.....
+           console.log('not a leapyear ')
+          } 
+        }
+        //since divisible by 4 and not by 100 its leapyear
+        else {
+         console.log('leapyear')
+       }	
+     }
+    // since not divisible by 4 its not a leapyear
+     else {
+      console.log('not a leap year')
+     }
+}
 
 
 
@@ -53,3 +102,23 @@
 // You may not use the built-in Math.sqrt method
 
 //Write your code below this line:
+
+function perfectSquareNumber(number){
+    let isPftSqr = false
+    for(let i = 1; i< number; i++){
+        if(number === i*i){
+            isPftSqr = true
+            break
+        }
+    }
+    
+    if(isPftSqr == true){
+        console.log(`${number} is a perfect square number`)
+    } else {
+        console.log(`${number} is not a perfect square number`)
+    }
+    
+}
+
+// perfectSquareNumber(5)
+perfectSquareNumber(9)
