@@ -88,23 +88,28 @@ isLeapYear(2000)
 function isPerfectSquare(num) {
     let factors = [];
     let n = num;
-
+    // confirm num is typeof number
     if (typeof n != 'number') {
         console.log(`Error the ${typeof n} "${n}" is not a number`)
         return false;
     }
-    for (let i = 1; i <= n; i++) {
-        //push factors of num to array 
+    //push factors of num to array
+    for (let i = 1; i < n; i++) {
         if (n % i == 0) {
             factors.push(i)
         }
-    }
-    console.log(factors)
-    //take remaining 2 factors and check if equal to each other
-    for (let f = 0; f <= factors.length; f++){
-        if (factors[f] * factors[f] === n){
-            console.log(`${n} is a Perfect Square`) 
+        
+    }console.log(factors)
+
+    // test if factor is a square root
+    for (let f = 0; f < factors.length; f++) {
+        if (factors[f] * factors[f] === n) {
+            console.log(factors[f])
+            let lowFactor = factors[f]
+            console.log(lowFactor)
+            console.log(`${n} is a Perfect Square`)
         } 
     }
+       
 }
-isPerfectSquare(81)
+isPerfectSquare(16)
