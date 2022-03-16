@@ -1,5 +1,5 @@
 // 1. GenBuzz Function
-        
+
 //    * Write a function that prints (to the console) numbers from a `lowerLimit` to an `upperLimit`.
 //    * For numbers divisible by 3, print “Gen”
 //    * For numbers divisible by 5, print “Buzz”
@@ -12,7 +12,33 @@
 
 // //Write your code below this line:
 
-
+function genBuzz(lowerLimit, upperLimit) {
+    // is the lowerLimit input a type of number
+    if (typeof lowerLimit !== 'number') {
+        console.log(`${lowerLimit} is not a number`)
+        // is the upperLimit input a type of number
+    } else if (typeof upperLimit !== 'number') {
+        console.log(`${upperLimit} is not a number`)
+    }
+    // if lowerLimit is greater than upperLimit 
+    if (lowerLimit > upperLimit) {
+        console.log(`${lowerLimit} is greater than ${upperLimit}`)
+    }
+    // iterate lowerLimit thru upperLimit
+    for (i = lowerLimit; i <= upperLimit; i++) {
+        
+        // if 
+        if (i % 3 == 0 && i % 5 == 0) {
+            console.log('GenBuzz')
+        } else if (i % 3 == 0) {
+            console.log('Gen')
+        } else if (i % 5 == 0) {
+            console.log('Buzz')
+        }else {
+            console.log(i)}
+    }
+};
+genBuzz(6, 30);
 
 
 // 2. Leap Year
@@ -34,8 +60,19 @@
 // Test your code by printing the funcition's output to the console.
 
 //Write your code below this line:
+const isLeapYear = year => {
+    if (year % 100 === 0) {
+        if (year % 400 === 0){
+            if (year % 4 === 0){
+            let statement = (`${year} is a Leap Year`)
+            console.log(statement);
+            return true
+            }}}else {
+                let statement = (`${year} is not a Leap Year`)
+                console.log(statement);
+                return false}}
 
-
+isLeapYear(2000);
 
 
 
@@ -53,3 +90,30 @@
 // You may not use the built-in Math.sqrt method
 
 //Write your code below this line:
+
+function isPerfectSquare(num) {
+    let factors = [];
+    let n = num;
+
+    // confirm num is typeof number
+    if (typeof n != 'number') {
+        console.log(`Error the ${typeof n} "${n}" is not a number`)
+        return false;
+    }
+
+    //push factors of num to array
+    for (let i = 1; i < n; i++) {
+        if (n % i == 0) {
+            factors.push(i)
+        }    
+    }
+    //console.log(factors)
+
+    // test if factor is a square root
+    for (let f = 0; f < factors.length; f++) {
+        if (factors[f] * factors[f] === n) {
+            console.log(`${n} is a Perfect Square`)
+        } 
+    }   
+}
+isPerfectSquare(16)
