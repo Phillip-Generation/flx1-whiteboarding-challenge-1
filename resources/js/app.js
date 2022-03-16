@@ -13,28 +13,29 @@
 // //Write your code below this line:
 
 function genBuzz(lowerLimit, upperLimit) {
-
+    // is the lowerLimit input a type of number
     if (typeof lowerLimit !== 'number') {
         console.log(`${lowerLimit} is not a number`)
-
+        // is the upperLimit input a type of number
     } else if (typeof upperLimit !== 'number') {
         console.log(`${upperLimit} is not a number`)
     }
-
+    // if lowerLimit is greater than upperLimit 
     if (lowerLimit > upperLimit) {
         console.log(`${lowerLimit} is greater than ${upperLimit}`)
     }
-
+    // iterate lowerLimit thru upperLimit
     for (i = lowerLimit; i <= upperLimit; i++) {
-        console.log(i)
-
+        
+        // if 
         if (i % 3 == 0 && i % 5 == 0) {
             console.log('GenBuzz')
         } else if (i % 3 == 0) {
             console.log('Gen')
         } else if (i % 5 == 0) {
             console.log('Buzz')
-        }
+        }else {
+            console.log(i)}
     }
 };
 genBuzz(6, 30);
@@ -64,8 +65,12 @@ const isLeapYear = year => {
         if (year % 400 === 0){
             if (year % 4 === 0){
             let statement = (`${year} is a Leap Year`)
-            return console.log(statement)
-            }}}}
+            console.log(statement);
+            return true
+            }}}else {
+                let statement = (`${year} is not a Leap Year`)
+                console.log(statement);
+                return false}}
 
 isLeapYear(2000);
 
@@ -111,4 +116,4 @@ function isPerfectSquare(num) {
         } 
     }   
 }
-isPerfectSquare(20)
+isPerfectSquare(16)
